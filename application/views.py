@@ -14,5 +14,5 @@ def index():
 def display():
 	form = FilterForm()
 	headline = request.form['headline']
-	data = controller.get_articles(headline)
+	data = (controller.get_articles(headline))
 	return render_template('result.html', form=form, headline=headline, data=data)
