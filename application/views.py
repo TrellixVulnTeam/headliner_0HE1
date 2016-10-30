@@ -4,6 +4,7 @@ from .forms import *
 from . import controllers as controller
 
 
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -15,4 +16,4 @@ def display():
 	form = FilterForm()
 	headline = request.form['headline']
 	data = (controller.get_articles(headline))
-	return render_template('result.html', form=form, headline=headline, data=data)
+	return render_template('news_display.html', form=form, headline=headline, data=data)

@@ -51,7 +51,7 @@ def get_articles(headline):
         url = i['url']
         source = i['provider'][0]['name']
         date = i['datePublished']
-        summary_data = client.Summarize({'url': url, 'sentences_number': 3}) # list
+        summary_data = client.Summarize({'url': url, 'sentences_number': 1}) # list
         summary = summary_data['sentences']
         hashtags_data = client.Hashtags({"url": url}) # is a list
         hashtags = hashtags_data['hashtags']

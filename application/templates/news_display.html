@@ -1,0 +1,23 @@
+{% block content %}
+
+
+{% for article in data %}
+<div>
+	<a href="{{ article.url }}">{{ article.title }}</a>
+	
+	<p>{{ article.publication_date }} {{ article.source }}</p>
+	<p>{{ article.summary[0] }}</p>
+
+	<p>{% for hashtag in article.hashtags %}
+	{{ hashtag}}
+	{% endfor %}</p>
+
+	<p>{{ article.polarity }} {{ article.polarity_confidence }}</p>
+	
+	<p>{{ article.subjectivity }} {{ article.subjectivity_confidence }}</p>
+	
+</div>
+{% endfor %}
+
+
+{% endblock %}
