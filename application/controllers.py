@@ -22,7 +22,7 @@ def get_articles(headline):
     params = urllib.parse.urlencode({
         # Request parameters
         'q': headline,
-        'count': '10',
+        'count': '15',
         'offset': '0',
         'mkt': 'en-us',
         'safeSearch': 'Moderate',
@@ -46,69 +46,25 @@ def get_articles(headline):
     article_list = []
 
     for i in decoded_data['value']:
-        article = []
-        # title, url, source, publication_date
-        title = i['name']
-        article.append(title)
+
+        title = i['name']   
         url = i['url']
-        article.append(url)
         source = i['provider'][0]['name']
-        article.append(source)
         date = i['datePublished']
-        article.append(date)
         summary_data = client.Summarize({'url': url, 'sentences_number': 3}) # list
-        article.append(summary_data['sentences'])
-        hashtags = client.Hashtags({"url": url}) # is a list
-        article.append(hashtags['hashtags'])
+        summary = summary_data['sentences']
+        hashtags_data = client.Hashtags({"url": url}) # is a list
+        hashtags = hashtags_data['hashtags']
         sentiment = client.Sentiment({'url': url})
         polarity = sentiment['polarity']
-        article.append(polarity)
         polarity_confidence = sentiment['polarity_confidence']
-        article.append(polarity_confidence)
         subjectivity = sentiment['subjectivity']
-        article.append(subjectivity)
         subjectivity_confidence = sentiment['subjectivity_confidence']
-        article.append(subjectivity_confidence)
-
-        article_list.append(article)
-
-        # article_list.append(Article(title, url, source, date))
-
+        article_list.append(Article(title, url, source, date, summary, hashtags, polarity, polarity_confidence, subjectivity, subjectivity_confidence))
+ 
     return article_list
 
 
-    # final_list = []
-    # for article in article_list:
-    #     final_list.append(article.title)
-    #     final_list.append(article.url)
-    #     final_list.append(article.source)
-    #     final_list.append(article.publication_date)
-
-
-
-
-# def article_extra_data(article_list):
-#     client = textapi.Client(app.config['AYLIEN_APP_ID'], app.config['AYLIEN_KEY'])
-#     extra_data = []
-
-#     for article in article_list:
-#         url = article.url
-
-#         summary_data = client.Summarize({'url': url, 'sentences_number': 3})
-#         summary = ""
-#         for sentence in summary_data['sentences']:
-#             summary += sentence
-#         hashtags = client.Hashtags({"url": url}) # is a list
-#         sentiment = client.Sentiment({'url': url})
-#         polarity = sentiment['polarity']
-#         polarity_confidence = sentiment['polarity_confidence']
-#         subjectivity = sentiment['subjectivity']
-#         subjectivity_confidence = sentiment['subjectivity_confidence']
-
-#         extra_data.append(ExtraArticleData(summary, hashtags, polarity, polarity_confidence, subjectivity, subjectivity_confidence)) 
-
-
-#     return extra_data
 
 
 
