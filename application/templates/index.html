@@ -1,17 +1,21 @@
+<html style="background:url({{ url_for('static', filename='img/news-background.jpg') }}) no-repeat center center fixed;">
+  <head>
+    <title>Headliner</title>
+   <!--  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+   </head>
 
-<!-- extend base layout -->
-
-
-    <form action="/display" method="post" name="filter">
+  <body>
+  	<form action="/display" method="post" name="filter">
     
         <div>
          {{ form.headline(class="css_class", placeholder="Headline") }}
         <br>
-    
-
-
         </div>
 
         
         <p><input type="submit" value="Submit"></p>
     </form>
+  
+
+  </body>
+</html> 
