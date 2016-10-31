@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+html {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	/*background-color: #d4efec;*/
+	background-color: #fbfbfb;
+	/*background-position: 50% 0;*/
+}
+
+
+#container {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 55vw;
+	height: 65vh;
+	background-color: #ffffff;
+	/*box-shadow: 0 4.375em 7.5em rgba(0, 0, 0, 0.47);*/
+	box-shadow: 0 4.375em 7.5em rgba(0, 0, 0, 0.47);
+
+}
+
+#left {
+/*	background: url('img/deer.jpg');*/
+	background:url('{{ url_for('static', filename='img/deer.jpg') }}');
+	/*no-repeat center center fixed*/
+	background-size: cover;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover; 
+	height: 100%;
+	display:inline-block;
+	width: 50%;
+	float: left;
+}
+
+#right {
+	height: 100%;
+	display:inline-block;
+	width:50%;
+
+
+}
+#form-content {
+	padding-top: 12%;
+	padding-left: 12%;
+}
+
+#title {
+	font-family: 'Bungee Hairline', cursive;
+	font-weight: 900;
+	font-size: 2em;
+}
+
+.term {
+	line-height: 1px;
+	font-family: 'Inconsolata', monospace;
+	color: #644334;
+
+}
+
+#input, textarea{
+    background-color: #f4f3f0;
+    outline: none;
+    box-shadow: none;
+    color: black;
+    font-family: 'Inconsolata', monospace;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    width: 75%;
+    margin-bottom: 1%;
+    /*box-shadow: 0 0.75em 1.5em rgba(0, 0, 0, 0.15);*/
+}
+
+#submit {
+	padding-top: 7.5%;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color:  #746e3c;
+	font-weight: 700;
+	/*font-family: 'Quicksand', sans-serif;*/
+	font-family: 'Inconsolata', monospace;
+	letter-spacing: 3px;
+	font-size: 15px;
+	padding-left: 3%;
+	/*font-style: italic;*/
+}
+
+#submit:focus {
+	outline: none;
+}
+
+
+
+.icon {
+	padding-top: 30%;
+}
+
+i {
+	color: black;
+}
