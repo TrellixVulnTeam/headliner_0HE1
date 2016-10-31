@@ -27,8 +27,7 @@ html {
 
 #left {
 	background:red;
-	background: url('img/deer.jpg');
-	/*no-repeat center center fixed*/
+	background:url('{{ url_for('static', filename='img/deer.jpg') }}');
 	background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
