@@ -1,7 +1,7 @@
-<html style="background:url({{ url_for('static', filename='img/news-background.jpg') }}) no-repeat center center fixed;">
+<!-- <html style="background:url({{ url_for('static', filename='img/news-background.jpg') }}) no-repeat center center fixed;">
   <head>
     <title>Headliner</title>
-   <!--  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+  
    </head>
 
   <body>
@@ -15,6 +15,43 @@
         
         <p><input type="submit" value="Submit"></p>
     </form>
+  
+
+  </body>
+</html> 
+ -->
+
+<html>
+  <head>
+    <title>Headliner</title>
+   <!--  <link rel="stylesheet" href="styles.css"> -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+   </head>
+
+  <body>
+
+    <div id="container">
+      <div id="left" style="background:url({{ url_for('static', filename='img/deer.jpg') }}) ">
+      </div>
+
+      <div id="right">
+        <div id="form-content">
+          <p id="title">NEWS SEARCH</p>
+        </div>
+      </div>
+</div>
+    <form action="/display" method="post" name="filter">
+    
+        <div>
+         {{ form.headline(class="css_class", placeholder="Headline") }}
+        <br>
+        </div>
+
+        
+        <p><input type="submit" value="Submit"></p>
+    </form>
+  
+    
   
 
   </body>

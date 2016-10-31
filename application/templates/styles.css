@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+html {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	/*background-color: #d4efec;*/
+	background-color: #fdfdfd;
+	/*background-position: 50% 0;*/
+}
+
+
+#container {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 55vw;
+	height: 65vh;
+	background-color: white;
+	/*box-shadow: 0 4.375em 7.5em rgba(0, 0, 0, 0.47);*/
+	box-shadow: 0 4.375em 7.5em rgba(0, 0, 0, 0.47);
+
+}
+
+#left {
+	background:red;
+	background: url('img/deer.jpg');
+	/*no-repeat center center fixed*/
+	background-size: cover;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover; 
+	height: 100%;
+	display:inline-block;
+	width: 50%;
+	float: left;
+}
+
+#right {
+	height: 100%;
+	display:inline-block;
+	width:50%;
+
+
+}
+#form-content {
+	padding-top: 12%;
+	padding-left: 12%;
+}
+
+#title {
+	font-family: 'Bungee Hairline', cursive;
+	font-weight: 900;
+	font-size: 2em;
+}
