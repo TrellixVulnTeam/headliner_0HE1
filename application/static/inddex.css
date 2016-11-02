@@ -63,6 +63,7 @@ html {
 .term {
 	line-height: 1px;
 	font-family: 'Inconsolata', monospace;
+	letter-spacing: 3px;
 	color: #644334;
 
 }
@@ -88,12 +89,11 @@ html {
 	border: none;
 	cursor: pointer;
 	color:  #746e3c;
-	font-weight: 700;
+
 	/*font-family: 'Quicksand', sans-serif;*/
 	font-family: 'Inconsolata', monospace;
 	letter-spacing: 3px;
 	font-size: 15px;
-	padding-left: 3%;
 	/*font-style: italic;*/
 }
 

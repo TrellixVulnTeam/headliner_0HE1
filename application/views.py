@@ -11,6 +11,11 @@ def index():
 	form = FilterForm()
 	return render_template('index.html', form=form)
 
+
+@app.route('/tester', methods=['GET', 'POST'])
+def tester():
+	return render_template('test.html')
+
 @app.route('/display', methods=['GET', 'POST'])
 def display():
 	form = FilterForm()

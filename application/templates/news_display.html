@@ -1,25 +1,79 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- <script>
+ 	$(".tab").click(function(){
+	    var divToToggle = $( $(this).find("a").attr('href') );
+	    $(".choice:visible").not(divToToggle).hide();
+	    divToToggle.slideToggle("slow");
+  	});                   		
+</script> -->
 
-<h1>{{ headline }}</h1>
+<h2 id="title">{{ headline }}</h2>
+
+
+
+
 
 {% for article in data %}
-<div>
-	<a href="{{ article.url }}">{{ article.title }}</a>
-	
-	<p>{{ article.publication_date }} {{ article.source }}</p>
-	<p>{{ article.summary[0] }}</p>
 
-	<p>{% for hashtag in article.hashtags %}
-	{{ hashtag}}
-	{% endfor %}</p>
+		{% if loop.index is divisibleby 4 %}
+         	<div class="row sm">
+         	<h1>{{ loop.index }}</h1>
+		{% endif %}
 
-	<p>{{ article.polarity }} {{ article.polarity_confidence }}</p>
-	
-	<p>{{ article.subjectivity }} {{ article.subjectivity_confidence }}</p>
-	
-</div>
-{% endfor %}
 
+         <div class="col-sm">
+            <div class="box">
+               <div id="container">
+	               <div class="header">
+						<div>
+							<a href="{{ article.url }}" class="url">{{ article.title }}</a>
+						</div>
+					</div>
+
+					<div class="content">
+						<p class="details">{{ article.publication_date }}</p>
+						<p class="details">{{ article.source }}</p>
+						<br>
+
+						<div class="choice-div">
+							<p class = "tab"><a id="summary-tab" href="#summary-content">Main Idea:</a></p> 
+							 
+							 <p class = "tab"><a id="sentiment-tab" href="#sentiment-content">Sentiment Analysis:</a></p> 
+							 <p class = "tab"><a id="tags-tab" href="#tags-content">Tags:</a></p> 
+						</div>
+
+						<div id="choice-content" class="content">
+	                        <div class="choice" id="summary-content" class="content">
+								<p>{{ article.summary[0] }}</p>
+							</div>
+
+							<div class="choice" id="tags-content" class="content">
+								<p>{% for hashtag in article.hashtags %}
+								{{ hashtag}}
+								{% endfor %}</p>
+							</div>
+
+							<div class="choice" id="sentiment-content" class="content">
+								<p>{{ article.polarity }}</p>
+								<p>{{ article.polarity_confidence }}</p>
+						
+								<p>{{ article.subjectivity }}</p>
+								<p>{{ article.subjectivity_confidence }}</p>
+							</div>		
+						</div>
+					</div>
+				 <i class="fa fa-long-arrow-right arrow fa-2x" aria-hidden="true"></i>
+                  </div>
+               </div>
+            </div>
+         
+         {% if loop.index is divisibleby 3 %}
+         	</div>
+         	<h1>{{ loop.index }}</h1>
+         {% endif %}
+
+    
+    {% endfor %}
 
 {% endblock %}
