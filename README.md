@@ -1,2 +1,2 @@
 # headliner
-News search with headline filtering.
+status: pick up again over the summer
